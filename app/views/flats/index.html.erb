@@ -1,0 +1,22 @@
+<div class="container">
+  <h1> Our Flats </h1>
+      <%= link_to 'Add a New Flat', new_flat_path, class:'btn-danger' %>
+    <div class="cards">
+      <% @flats.each do |flat| %>
+        <div class= "row">
+          <div class= "col-sm-3">
+            <div class="card" style="width: 18rem;">
+              <%= image_tag "https://source.unsplash.com/featured/?building&#{rand(1..100)}", class: "card-img-top" %>
+              <div class="card-body">
+                <h2 class="card-text"><%= link_to flat.name, flat_path(flat) %></h2>
+                <p class="card-text">Address: <%= flat.address %></p>
+                <p class="card-text">Description: <%= flat.description %></p>
+                <p class="card-text">Price: <%= flat.price_per_night %> £</p>
+                <p class="card-text">Guests: <%= flat.number_of_guests %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>

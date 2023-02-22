@@ -1,0 +1,13 @@
+<div class="container">
+    <h1><%= @flat.name %></h1>
+      <div class="card" style="width: 18rem;">
+        <%= image_tag "https://source.unsplash.com/featured/?flat&#{rand(1..100)}", class: "card-img-top" %>
+          <div class="card-body">
+            <p class="card-text">Address: <%= @flat.address %></p>
+            <p class="card-text">Description: <%= @flat.description %></p>
+            <p class="card-text">Price: <%= @flat.price_per_night %> £</p>
+            <p class="card-text">Guests: <%= @flat.number_of_guests %></p>
+          </div>
+      </div>
+    <%= link_to 'Back', flats_path(@flats) %>
+</div>
